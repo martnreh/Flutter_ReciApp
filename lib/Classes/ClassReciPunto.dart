@@ -6,6 +6,7 @@ class ReciPunto{
   final String contact;
   final List<String> calendar;
 
+
   ReciPunto(this.name,this.address,this.materials,this.phone,this.contact,this.calendar);
 
 }
