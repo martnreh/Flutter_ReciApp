@@ -3,6 +3,7 @@ import 'package:firebase_database/firebase_database.dart';
 import 'package:reciapp_database/Classes/ClassReciPunto.dart';
 import 'package:reciapp_database/Classes/ClassUser.dart';
 import 'package:reciapp_database/Screens/HomePage.dart';
+import 'package:reciapp_database/Models/FirebaseDataBase.dart';
 
 
 
@@ -548,11 +549,14 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                     print('Te faltan datos crack');
                   }
                   else{
-                    final ReciPunto punto = ReciPunto(name,address,materials,phone,contact,calendar);
-                    user.reciPuntos.add(punto);
-                    writeData(punto);
 
-                    //Navigator.pop(context );
+                    //Cambiar  para incluir latitud y longitud
+                    final ReciPunto punto = ReciPunto(name,address,25.711584695099525, -100.34881424075635,materials,phone,contact,calendar);
+                    user.reciPuntos.add(punto);
+                    writeData(punto);//Upload ReciPunto to Firebase
+
+
+                    Navigator.pop(context );
                     Navigator.pushReplacementNamed(context,'/HomePage.dart');
                     print('Finalizar');
                   }
@@ -568,6 +572,7 @@ class _AddReciPuntoState extends State<AddReciPunto> {
 }
 
 //Flutter Firebase DataBase Tutorial| Crud operations Flutter app development
+/*
 void writeData(ReciPunto _punto){
   final DBRef = FirebaseDatabase.instance.reference();
   String username = user.name;
@@ -575,22 +580,34 @@ void writeData(ReciPunto _punto){
   DBRef.child('users/').child(username).child(pointnum).set({
     'name': _punto.name,
     'address' : _punto.address,
+    'latitude' : _punto.latitude,
+    'longitude' : _punto.longitude,
     'materials' : _punto.materials,
     'phone' : _punto.phone,
     'contact' : _punto.contact,
     'calendar' : _punto.calendar,
   });
 }
+*/
 
-/*void readData(){
-  DBRef.once.then((DataSnapshot dataSnapshot){
-    print(dataSnapshot.value);
-  });
-}*/
+
+
 
 /*void deleteData(){
   DBRef.child("1").remove();
 }*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

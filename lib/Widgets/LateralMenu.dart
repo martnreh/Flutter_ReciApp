@@ -28,11 +28,10 @@ class _LateralMenuState extends State<LateralMenu> {
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: NetworkImage(
-                            'https://i.pinimg.com/280x280_RS/d0/c6/f0/d0c6f0d862e86e3c923c5e2089e3d8de.jpg',
-                          ),
-                          fit: BoxFit.fill,
+                          image: new AssetImage('Images/ImageUserMartin.png'),
+                          fit: BoxFit.cover,
                         ),
+                        border: Border.all(color: Colors.teal,width: 5),
                       ),
                     ),
                     Text(user.name, style: TextStyle(fontWeight: FontWeight.w800,color: Colors.white,fontSize: 22)),

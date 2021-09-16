@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 //import 'package:flutter_reci_app_final/Widgets/GoogleMaps.dart';
 import 'package:reciapp_database/Widgets/LateralMenu.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:reciapp_database/Widgets/GoogleMaps.dart';
 
 
 
@@ -18,10 +20,9 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         key: scaffoldKey,
         drawer: LateralMenu(),
-        //appBar: AppBar(title:Text('hola'),),
         body: Stack(
           children: [
-            //GoogleMaps(), //Call GoogleMaps Widget
+            GoogleMaps(), //Call GoogleMaps Widget
             Positioned( top:85, left: 0,right: 0,
                 child: Container(
                   padding: EdgeInsets.all(28),
@@ -45,11 +46,10 @@ class _HomePageState extends State<HomePage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         image: DecorationImage(
-                          image: NetworkImage(
-                            'https://i.pinimg.com/280x280_RS/d0/c6/f0/d0c6f0d862e86e3c923c5e2089e3d8de.jpg',
-                          ),
+                          image: new AssetImage('Images/ImageUserMartin.png'),
+                          fit: BoxFit.cover,
                         ),
-                        border: Border.all(color: Colors.teal,width: 1),
+                        border: Border.all(color: Colors.teal,width: 3),
                       ),
                     ),
                     SizedBox(width: 10,),
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    Image(image: AssetImage('Images/greenmarker.png'),height: 50,width: 50,),
+                    Image(image: AssetImage('Images/MarkerBattery.png'),height: 50,width: 50,),
                   ],
                 ),
               ),
@@ -82,6 +82,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: () => scaffoldKey.currentState.openDrawer(),
               ),
             ),
+
           ],
         )
     );
