@@ -37,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                 )
             ),
             Positioned(
-              top: 88, left: 28, right: 28,
+              top: 95, left: 28, right: 28,
               child: Container(
                 child: Row(
                   children: [
@@ -55,14 +55,14 @@ class _HomePageState extends State<HomePage> {
                     SizedBox(width: 10,),
                     Expanded(
                       child:Column(
-                        crossAxisAlignment: CrossAxisAlignment.center ,
+                        crossAxisAlignment: CrossAxisAlignment.start ,
                         children: [
                           Text('Martin Barrientos',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.lightGreen ),),
                           Text('Av. Eugenio Garza Sada 2501 Sur' ,style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold,color: Colors.black26 ),),
                         ],
                       ),
                     ),
-                    Image(image: AssetImage('Images/MarkerBattery.png'),height: 50,width: 50,),
+                    //Image(image: AssetImage('Images/MarkerBattery.png'),height: 50,width: 50,),
                   ],
                 ),
               ),
@@ -71,7 +71,7 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 children: [
                   Center(
-                    child:Text('Reci',style: TextStyle(fontWeight: FontWeight.w800,color: Colors.lightGreen,fontSize: 35)),
+                    child:Text('Reci',style: TextStyle(fontWeight: FontWeight.w800,color: Colors.lightGreen,fontSize: 40)),
                   ),
                 ],
               ),

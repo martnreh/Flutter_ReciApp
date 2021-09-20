@@ -4,6 +4,7 @@ import 'package:reciapp_database/Classes/ClassReciPunto.dart';
 import 'package:reciapp_database/Classes/ClassUser.dart';
 import 'package:reciapp_database/Screens/HomePage.dart';
 import 'package:reciapp_database/Models/FirebaseDataBase.dart';
+import 'package:reciapp_database/Widgets/GooglePlacesAutocomplete.dart';
 
 
 
@@ -76,6 +77,7 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                 height: 20,
               ),
               //////////////////////////
+              //GooglePlacesAutocomplete(),
               TextField(
                 decoration: InputDecoration(hintText: 'ej. Av. Cristóbal Colón 3128, Acero, Monterrey, N.L.',
                     labelText: 'Dirección',
@@ -138,10 +140,10 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressedCartonPapel = !_hasBeenPressedCartonPapel;
                             if(_hasBeenPressedCartonPapel== true){
-                              materials.add('papel');
+                              materials.add('Cartón/Papel');
                             }
                             else{
-                              materials.remove('papel');
+                              materials.remove('Cartón/Papel');
                             }
                           });
                         },
@@ -164,10 +166,10 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressedBaterias = !_hasBeenPressedBaterias;
                             if(_hasBeenPressedBaterias== true){
-                              materials.add('bateria');
+                              materials.add('Baterías');
                             }
                             else{
-                              materials.remove('bateria');
+                              materials.remove('Baterías');
                             }
                           });
                         },
@@ -190,10 +192,10 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressedVidrio = !_hasBeenPressedVidrio;
                             if(_hasBeenPressedVidrio== true){
-                              materials.add('vidrio');
+                              materials.add('Vidrio');
                             }
                             else{
-                              materials.remove('vidrio');
+                              materials.remove('Vidrio');
                             }
                           });
                         },
@@ -216,10 +218,10 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressedTelas = !_hasBeenPressedTelas;
                             if(_hasBeenPressedTelas== true){
-                              materials.add('tela');
+                              materials.add('Ropa y Telas');
                             }
                             else{
-                              materials.remove('tela');
+                              materials.remove('Ropa y Telas');
                             }
                           });
                         },
@@ -242,17 +244,17 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressed1 = !_hasBeenPressed1;
                             if(_hasBeenPressed1== true){
-                              materials.add('pl1');
+                              materials.add('Plástico 1');
                             }
                             else{
-                              materials.remove('pl1');
+                              materials.remove('Plástico 1');
                             }
                           });
                         },
                         child: Column(
                           children: [
                             Image(image: AssetImage('Images/plastico1.jpg'),height: 150,width: 150,),
-                            Text('Plastico 1',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
+                            Text('Plástico 1',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
                             Text('PET',style: TextStyle(fontSize: 11,fontWeight: FontWeight.normal,color: Colors.grey))
 
                           ],
@@ -270,17 +272,17 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressed2 = !_hasBeenPressed2;
                             if(_hasBeenPressed2== true){
-                              materials.add('pl2');
+                              materials.add('Plástico 2');
                             }
                             else{
-                              materials.remove('pl2');
+                              materials.remove('Plástico 2');
                             }
                           });
                         },
                         child: Column(
                           children: [
                             Image(image: AssetImage('Images/plastico2.png'),height: 150,width: 150,),
-                            Text('Plastico 2',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
+                            Text('Plástico 2',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
                             Text('PEAD',style: TextStyle(fontSize: 11,fontWeight: FontWeight.normal,color: Colors.grey))
                           ],
                         ),
@@ -297,17 +299,17 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressed3 = !_hasBeenPressed3;
                             if(_hasBeenPressed3== true){
-                              materials.add('pl3');
+                              materials.add('Plástico 3');
                             }
                             else{
-                              materials.remove('pl3');
+                              materials.remove('Plástico 3');
                             }
                           });
                         },
                         child: Column(
                           children: [
                             Image(image: AssetImage('Images/pvc.png'),height: 150,width: 150,),
-                            Text('Plastico 3',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
+                            Text('Plástico 3',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
                             Text('PVC',style: TextStyle(fontSize: 11,fontWeight: FontWeight.normal,color: Colors.grey))
                           ],
                         ),
@@ -324,17 +326,17 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressed4 = !_hasBeenPressed4;
                             if(_hasBeenPressed4== true){
-                              materials.add('pl4');
+                              materials.add('Plástico 4');
                             }
                             else{
-                              materials.remove('pl4');
+                              materials.remove('Plástico 4');
                             }
                           });
                         },
                         child: Column(
                           children: [
                             Image(image: AssetImage('Images/plastico4.png'),height: 150,width: 150,),
-                            Text('Plastico 4',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
+                            Text('Plástico 4',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
                             Text('PEBD',style: TextStyle(fontSize: 11,fontWeight: FontWeight.normal,color: Colors.grey))
                           ],
                         ),
@@ -351,17 +353,17 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressed5 = !_hasBeenPressed5;
                             if(_hasBeenPressed5== true){
-                              materials.add('pl5');
+                              materials.add('Plástico 5');
                             }
                             else{
-                              materials.remove('pl5');
+                              materials.remove('Plástico 5');
                             }
                           });
                         },
                         child: Column(
                           children: [
                             Image(image: AssetImage('Images/plastico5.png'),height: 150,width: 150,),
-                            Text('Plastico 5',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
+                            Text('Plástico 5',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
                             Text('PP',style: TextStyle(fontSize: 11,fontWeight: FontWeight.normal,color: Colors.grey))
                           ],
                         ),
@@ -378,17 +380,17 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressed6 = !_hasBeenPressed6;
                             if(_hasBeenPressed6== true){
-                              materials.add('pl6');
+                              materials.add('Plástico 6');
                             }
                             else{
-                              materials.remove('pl6');
+                              materials.remove('Plástico 6');
                             }
                           });
                         },
                         child: Column(
                           children: [
                             Image(image: AssetImage('Images/plastico6.jpg'),height: 150,width: 150,),
-                            Text('Plastico 6',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
+                            Text('Plástico 6',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
                             Text('PS',style: TextStyle(fontSize: 11,fontWeight: FontWeight.normal,color: Colors.grey))
                           ],
                         ),
@@ -405,17 +407,17 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                           setState(() {
                             _hasBeenPressed7 = !_hasBeenPressed7;
                             if(_hasBeenPressed7== true){
-                              materials.add('pl7');
+                              materials.add('Plástico 7');
                             }
                             else{
-                              materials.remove('pl7');
+                              materials.remove('Plástico 7');
                             }
                           });
                         },
                         child: Column(
                           children: [
                             Image(image: AssetImage('Images/plastico7.jpg'),height: 150,width: 150,),
-                            Text('Plastico 7',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
+                            Text('Plástico 7',style: TextStyle(fontSize: 19,fontWeight: FontWeight.normal,color: Colors.teal)),
                             Text('Otros',style: TextStyle(fontSize: 11,fontWeight: FontWeight.normal,color: Colors.grey))
                           ],
                         ),
@@ -452,10 +454,10 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                         setState(() {
                           _isCheckedLunesViernes = value;
                           if(_isCheckedLunesViernes== true){
-                            calendar.add('LV');
+                            calendar.add('Lunes a Viernes');
                           }
                           else{
-                            calendar.remove('LV');
+                            calendar.remove('Lunes a Viernes');
                           }
                         });
                       },
@@ -470,10 +472,10 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                         setState(() {
                           _isCheckedSabado = value;
                           if(_isCheckedSabado== true){
-                            calendar.add('S');
+                            calendar.add('Sábado');
                           }
                           else{
-                            calendar.remove('S');
+                            calendar.remove('Sábado');
                           }
                         });
                       },
@@ -488,10 +490,10 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                         setState(() {
                           _isCheckedDomingo = value;
                           if(_isCheckedDomingo== true){
-                            calendar.add('D');
+                            calendar.add('Domingo');
                           }
                           else{
-                            calendar.remove('D');
+                            calendar.remove('Domingo');
                           }
                         });
                       },
@@ -503,7 +505,7 @@ class _AddReciPuntoState extends State<AddReciPunto> {
               SizedBox(height: 20,),
 
               TextField(
-                decoration: InputDecoration(hintText: 'ej. +528121687361',
+                decoration: InputDecoration(hintText: 'ej. +52 8121687361',
                     labelText: 'Teléfono de Contacto',
                     labelStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.teal),
                     fillColor: Colors.green[100],
@@ -520,11 +522,12 @@ class _AddReciPuntoState extends State<AddReciPunto> {
               ),
               //////////////////////////////
               TextField(
+                toolbarOptions: ToolbarOptions(copy:true ,paste: true),
                 decoration: InputDecoration(hintText: 'ej. Facebook: Reciclaje Monterrey',
                     labelText: 'Sitio Web, Facebook o Correo electrónico',
                     labelStyle: TextStyle(fontSize: 17,fontWeight: FontWeight.bold,color: Colors.teal),
                     fillColor: Colors.green[100],
-                    filled: true
+                    filled: true,
                 ),
                 onChanged: (String str){
                   setState(() {
@@ -551,13 +554,14 @@ class _AddReciPuntoState extends State<AddReciPunto> {
                   else{
 
                     //Cambiar  para incluir latitud y longitud
-                    final ReciPunto punto = ReciPunto(name,address,25.711584695099525, -100.34881424075635,materials,phone,contact,calendar);
+                    final ReciPunto punto = ReciPunto(name,address,25.66872225181611, -100.30330295083957,materials,phone,contact,calendar);
                     user.reciPuntos.add(punto);
                     writeData(punto);//Upload ReciPunto to Firebase
 
 
-                    Navigator.pop(context );
-                    Navigator.pushReplacementNamed(context,'/HomePage.dart');
+                    Navigator.pop(context);
+                    //Navigator.of(context).pushNamed('/InfoReciPuntoMaps.dart');
+                    Navigator.pushReplacementNamed(context,'/HomePage.dart'); //checar cual es mejor
                     print('Finalizar');
                   }
                 },
@@ -570,25 +574,6 @@ class _AddReciPuntoState extends State<AddReciPunto> {
     );
   }
 }
-
-//Flutter Firebase DataBase Tutorial| Crud operations Flutter app development
-/*
-void writeData(ReciPunto _punto){
-  final DBRef = FirebaseDatabase.instance.reference();
-  String username = user.name;
-  String pointnum = "Point " + user.reciPuntos.length.toString();
-  DBRef.child('users/').child(username).child(pointnum).set({
-    'name': _punto.name,
-    'address' : _punto.address,
-    'latitude' : _punto.latitude,
-    'longitude' : _punto.longitude,
-    'materials' : _punto.materials,
-    'phone' : _punto.phone,
-    'contact' : _punto.contact,
-    'calendar' : _punto.calendar,
-  });
-}
-*/
 
 
 
