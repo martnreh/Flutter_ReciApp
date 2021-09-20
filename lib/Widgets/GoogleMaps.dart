@@ -7,6 +7,7 @@ import 'package:reciapp_database/Classes/ClassReciPunto.dart';
 import 'package:reciapp_database/Models/FirebaseDataBase.dart';
 import 'package:reciapp_database/Models/GoogleMapsStyle.dart';
 import 'package:reciapp_database/Classes/ClassUser.dart';
+import 'package:reciapp_database/Widgets/InfoReciPuntoMaps.dart';
 
 
 const LatLng SOURCE_LOCATION = LatLng(42.7477863,-71.1699932);
@@ -14,6 +15,8 @@ const LatLng DEST_LOCATION = LatLng(42.744421,-71.1698939);
 const double CAMERA_ZOOM = 12;
 const double CAMERA_TILT = 50;
 const double CAMERA_BEARING = 30;
+
+ReciPunto SELECTEDRECIPUNTO;
 
 
 class GoogleMaps extends StatefulWidget {
@@ -32,10 +35,10 @@ class _GoogleMapsState extends State<GoogleMaps> {
     await readDataUsers(); //
     print('datos leidos!!!!!!!!!!!!!');
     print('length user.recipuntos = ' + user.reciPuntos.length.toString());
-    String imageReference;
+    String imageMarkerReference;
     for(int i = 0; i <= (user.reciPuntos.length-1);i++){
-      imageReference= await assignImageMarker(user.reciPuntos[i]);
-      mapMarker.add(await BitmapDescriptor.fromAssetImage(ImageConfiguration.empty, imageReference));
+      imageMarkerReference= await assignImageMarker(user.reciPuntos[i]);
+      mapMarker.add(await BitmapDescriptor.fromAssetImage(ImageConfiguration.empty, imageMarkerReference));
     }
 
     setState((){
@@ -49,10 +52,9 @@ class _GoogleMapsState extends State<GoogleMaps> {
             infoWindow: InfoWindow(
               title: user.reciPuntos[i].name,
               snippet: user.reciPuntos[i].address,
-              onTap:(){
-                build(BuildContext context){
-                  InfoReciPuntoMaps();
-                }
+              onTap:() async {
+                SELECTEDRECIPUNTO = user.reciPuntos[i];
+                Navigator.of(context).pushNamed('/InfoReciPuntoMaps.dart');
               }
             ),
           ),
@@ -84,7 +86,7 @@ class _GoogleMapsState extends State<GoogleMaps> {
     zoom: CAMERA_ZOOM,
     tilt: CAMERA_TILT,
     bearing: CAMERA_BEARING,
-    target: LatLng(25.713247332926002, -100.348127595312),
+    target: LatLng(25.65146816928216, -100.28963656215146),
   );
 
 
